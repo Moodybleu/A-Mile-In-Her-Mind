@@ -6,7 +6,7 @@ const db = require('./models')
 const cookieParser = require('cookie-parser')
 const crypto = require('crypto-js')
 
-// config express app/middlewares
+// config express app/middleware
 const app = express()
 const PORT = process.env.PORT || 3000
 app.set('view engine', 'ejs')
@@ -47,5 +47,5 @@ app.use('/users', require('./controllers/user'))
 
 // listen on a port
 app.listen(PORT, () => {
-console.log(`you or your loved ones are on port ${PORT}`)
+console.log(`This is a safe space on port ${PORT}`)
 })

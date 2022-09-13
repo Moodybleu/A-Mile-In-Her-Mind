@@ -1,6 +1,6 @@
 {
   "development": {
-    "database": "express_auth_boilerplate",
+    "database": "a_mile_in_her_mind",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
