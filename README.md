@@ -6,11 +6,13 @@ My app is a word prompt for individuals who have experienced trauma to journal o
 
 ## Choice of API
 
-Free dictionary API - https://dictionaryapi.dev/
+Random-words-API - https://random-words-api.vercel.app/word
 
 ## Wireframe
 
-![Wireframe](./A-Mile-In-Her-Mind-Wireframe.png)
+![Wireframe](./A-Mile-In-Her-Mind-Wireframe/1.png)
+![Wireframe](./A-Mile-In-Her-Mind-Wireframe/2.png)
+![Wireframe](./A-Mile-In-Her-Mind-Wireframe/3.png)
 
 ## ERD
 
