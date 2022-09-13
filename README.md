@@ -18,11 +18,13 @@ Random-words-API - https://random-words-api.vercel.app/word
 (./ERD.png)
 
 ## RESTful routes
-| Syntax | Description | 
-| ------ | ----------- |
-| Header | Title |
-| Paragraph | Text |
-| **Bold** | *Italalic* |
+| HTTP METHOD (_Verb_) | URL (_Nouns_)        | CRUD    | Response                             | Notes                                                                                                                    |
+| -------------------- | -----------------    | ------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| GET                  | `/entry`             | READ    | Array of entries you've made `{ [ entry1, entry2 ] }`  | allows a user to find all entries they've made                                                                                    |
+| GET                  | `/entries/:entry_id` | READ    | Single entry `{ entry }`                               | details view of a single entry (aka `/entry/1234`)                                                                                |
+| POST                 | `/entry`             | CREATE  | new entry is created `{ entry }`                       | can send back a status `204` (no content), a redirect to where to find data (GET `/entries/:entry_id`) or just the new entry data |
+| PUT/PATCH            | `/entries/:entry_id` | UPDATE  | updated entry `{ entry }`                              | can send back a status `204` (no content), a redirect to where to find data (GET `/entries/:entry_id`) or just the new entry data |
+| DELETE               | `/entries/:entry_id` | DESTROY | Delete an old entry or shared entry                    | can send back a status `204` (no content), a redirect to where to find data (GET `/entries`)                                      |
 ## MVP 
  - user is able to log in 
  - user is able to make an entry
