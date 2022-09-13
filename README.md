@@ -6,4 +6,4 @@ My app is a word prompt for journaling and poetry entries. The application will 
 
 ## Wireframe
 
-![Wireframe](./A-Mile-In-Her-Mind.png)
+![Wireframe](./A-Mile-In-Her-Mind-Wireframe.png)
