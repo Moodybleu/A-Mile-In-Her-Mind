@@ -1,4 +1,4 @@
-# Project 2: A Mile In My Mind
+# Project 2: A Mile In Her Mind
 
 ## Project idea and description
 
