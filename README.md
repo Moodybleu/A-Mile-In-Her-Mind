@@ -11,8 +11,21 @@ Random-words-API - https://random-words-api.vercel.app/word
 ## Wireframe
 
 ![Wireframe](./A-Mile-In-Her-Mind-Wireframe/1.png)
-![Wireframe](./A-Mile-In-Her-Mind-Wireframe/2.png)
 ![Wireframe](./A-Mile-In-Her-Mind-Wireframe/3.png)
+![Wireframe](./A-Mile-In-Her-Mind-Wireframe/2.png)
 
 ## ERD
+(./ERD.png)
 
+## RESTful routes
+| Syntax | Description | 
+| ------ | ----------- |
+| Header | Title |
+| Paragraph | Text |
+| **Bold** | *Italalic* |
+## MVP 
+ - user is able to log in 
+ - user is able to make an entry
+ - user is able favorite other user entries
+
+## stretch goals
