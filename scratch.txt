@@ -4,3 +4,7 @@ Email: VARCHAR 255 (string)
 Password: VARCHAR 255 (string)
 
 sequelize model:create --name user --attributes email:string,password:string
+
+sequelize model:create --name entry --attributes userId:interger,content:text,is_private:boolean,words:text
+
+sequelize model:create --name comment --attributes userId:integer,entryId:integer,content:text
