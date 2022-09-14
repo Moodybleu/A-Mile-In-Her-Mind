@@ -7,18 +7,11 @@
     <title>A Mile In Her Mind</title>
 </head>
 <body>
+    
     <nav>
         <ul>
             <% if (user) { %>
-                <li>
-                    <a href="/user/profile">Profile</a>
-                </li>
-                <li>
-                    <a href="/views/home.ejs">Home</a>
-                </li>
-                <li>
-                    <a href="/user/logout">Logout</a>
-                </li>
+                <%- include('partials/navbar') %>
              <% } else { %>
             
                 <li>

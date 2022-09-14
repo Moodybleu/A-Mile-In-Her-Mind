@@ -44,7 +44,7 @@ router.get('/:entry_id', (req, res) => {
   })
 })
 
-// POST /entry/:id/comments - route to save comment to db
+// POST /entry/:entry_id/comments - route to save comment to db
 
 router.post('/:id/comments',async (req, res) => {
   //  Get the data from req.body
