@@ -8,12 +8,6 @@ My app is a word prompt for individuals who have experienced trauma to journal o
 
 Random-words-API - https://random-words-api.vercel.app/word
 
-## Wireframe
-
-![Wireframe](./A-Mile-In-Her-Mind-Wireframe/1.png)
-![Wireframe](./A-Mile-In-Her-Mind-Wireframe/3.png)
-![Wireframe](./A-Mile-In-Her-Mind-Wireframe/2.png)
-
 ## ERD
 ![Wireframe](./ERD.png)
 
@@ -25,6 +19,18 @@ Random-words-API - https://random-words-api.vercel.app/word
 | POST                 | `/entry`             | CREATE  | new entry is created `{ entry }`                       | can send back a status `204` (no content), a redirect to where to find data (GET `/entries/:entry_id`) or just the new entry data |
 | PUT/PATCH            | `/entries/:entry_id` | UPDATE  | updated entry `{ entry }`                              | can send back a status `204` (no content), a redirect to where to find data (GET `/entries/:entry_id`) or just the new entry data |
 | DELETE               | `/entries/:entry_id` | DESTROY | Delete an old entry or shared entry                    | can send back a status `204` (no content), a redirect to where to find data (GET `/entries`)                                      |
+
+## Wireframe
+
+![Wireframe](./A-Mile-In-Her-Mind-Wireframe/1.png)
+![Wireframe](./A-Mile-In-Her-Mind-Wireframe/3.png)
+![Wireframe](./A-Mile-In-Her-Mind-Wireframe/2.png)
+
+## User Story
+
+as a user I want to be able to login to my own profile
+As a user want to be able to write an entry with a prompted word
+as a user i want to be able to favorite posts I appreciate or liked
 
 ## MVP 
  - user is able to log in 
