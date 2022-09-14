@@ -28,9 +28,9 @@ Random-words-API - https://random-words-api.vercel.app/word
 
 ## User Story
 
-as a user I want to be able to login to my own profile
-As a user want to be able to write an entry with a prompted word
-as a user i want to be able to favorite posts I appreciate or liked
+- as a user I want to be able to login to my own profile
+- As a user want to be able to write an entry with a prompted word
+- as a user i want to be able to favorite posts I appreciate or liked
 
 ## MVP 
  - user is able to log in 

@@ -2,7 +2,7 @@ let express = require('express')
 let db = require('../models')
 let router = express.Router()
 
-// POST /entries - create a new post
+// POST /entry - create a new post
 router.post('/', (req, res) => {
   db.entry.create({
     content: req.body.content,
@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
     res.redirect('/')
   })
   .catch((error) => {
-    res.status(400).render('<h1>Server error</h1>')
+    res.status(400).render('Home/404')
   })
 })
 
@@ -23,12 +23,12 @@ router.get('/new', (req, res) => {
     res.render('entries/new', { entries: entries })
   })
   .catch((error) => {
-    res.status(400).render('main/404')
+    res.status(400).render('Home/404')
   })
 })
 
-// GET /entries/:id - display a specific post and its author
-router.get('/:id', (req, res) => {
+// GET /entries/:entry_id - display a specific post and its user
+router.get('/:entry_id', (req, res) => {
   db.entry.findOne({
     where: { id: req.params.id },
     include: [db.user, db.comment]
@@ -40,11 +40,11 @@ router.get('/:id', (req, res) => {
   })
   .catch((error) => {
     console.log(error)
-    res.status(400).render('main/404')
+    res.status(400).render('Home/404')
   })
 })
 
-// POST /articles/:id/comments - route to save comment to db
+// POST /entry/:id/comments - route to save comment to db
 
 router.post('/:id/comments',async (req, res) => {
   //  Get the data from req.body
@@ -54,12 +54,12 @@ router.post('/:id/comments',async (req, res) => {
 res.send(req.body)
 try {
 const newComment = await db.comment.create({
-  name: req.body.name,
   content: req.body.content,
-  articleId: req.params.id
+  userId: req.params.id,
+  entryId: req.params.id
 })
-// 3000/articles/1
-res.redirect(`/articles${req.params.id}`)
+// 3000/entries/1
+res.redirect(`/entries${req.params.id}`)
 } catch(err) {
   console.log(err)
 }
