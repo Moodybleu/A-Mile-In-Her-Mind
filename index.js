@@ -20,7 +20,7 @@ app.use(async (req, res, next) => {
     // if there is a cookie on the incoming request
     if(req.cookies.userId) {
         // decrypt the user id before you look up the user in the db
-        const decryptedId = crypto.AES.decrypt(req,cookies.userId.toString(), process.env.ENC_SECRET)
+        const decryptedId = crypto.AES.decrypt(req.cookies.userId.toString(), process.env.ENC_SECRET)
         const decryptedIdString = decryptedId.toString(crypto.enc.Utf8)
         // look up the user in the db
         const user = await db.user.findByPk(decryptedIdString)
