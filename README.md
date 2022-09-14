@@ -15,7 +15,7 @@ Random-words-API - https://random-words-api.vercel.app/word
 ![Wireframe](./A-Mile-In-Her-Mind-Wireframe/2.png)
 
 ## ERD
-(./ERD.png)
+<img src='(./ERD.png)'>
 
 ## RESTful routes
 | HTTP METHOD (_Verb_) | URL (_Nouns_)        | CRUD    | Response                             | Notes                                                                                                                    |
@@ -25,9 +25,13 @@ Random-words-API - https://random-words-api.vercel.app/word
 | POST                 | `/entry`             | CREATE  | new entry is created `{ entry }`                       | can send back a status `204` (no content), a redirect to where to find data (GET `/entries/:entry_id`) or just the new entry data |
 | PUT/PATCH            | `/entries/:entry_id` | UPDATE  | updated entry `{ entry }`                              | can send back a status `204` (no content), a redirect to where to find data (GET `/entries/:entry_id`) or just the new entry data |
 | DELETE               | `/entries/:entry_id` | DESTROY | Delete an old entry or shared entry                    | can send back a status `204` (no content), a redirect to where to find data (GET `/entries`)                                      |
+
 ## MVP 
  - user is able to log in 
- - user is able to make an entry
+ - user is able to write an entry
  - user is able favorite other user entries
+ - user is able to see 1 - 3 words for their prompt
 
 ## stretch goals
+- calm music in the background of entry page
+- Anxiety attack button -- for users who have panic attacks mid-entry. The button will connect them to a serene scene and play a meditation that reminds them they are safe now
