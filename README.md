@@ -15,7 +15,7 @@ Random-words-API - https://random-words-api.vercel.app/word
 ![Wireframe](./A-Mile-In-Her-Mind-Wireframe/2.png)
 
 ## ERD
-<img src='(./ERD.png)'>
+<img src='(../ERD.png)'>
 
 ## RESTful routes
 | HTTP METHOD (_Verb_) | URL (_Nouns_)        | CRUD    | Response                             | Notes                                                                                                                    |
