@@ -35,16 +35,16 @@ app.use(async (req, res, next) => {
     next()
 
 })
+//  Controllers
+app.use('/users', require('./controllers/user'))
+app.use('/entries', require('./controllers/entries'))
 
 // route definitions
 app.get('/', (req, res) => {
     console.log('the currently logged in user is:', res.locals.user)
-    res.render('home.ejs')
+    res.render('home')
 })
 
-//  Controllers
-app.use('/users', require('./controllers/user'))
-app.use('/entries', require('./controllers/entries'))
 
 // listen on a port
 app.listen(PORT, () => {
