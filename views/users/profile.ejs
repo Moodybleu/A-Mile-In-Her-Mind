@@ -1,2 +1,15 @@
+<img src="/profile_pic.jpeg" class="rounded float-start" alt="default profile picture">
 <h2>Welcome to your profile <%= user.email %>! </h2>
 
+<form action="/entries" method="POST"> 
+    <div class="form-group">
+      <label for="title" placeholder="If you have a title, otherwise do not feel obligated."><h3>Title</h3></label>
+      <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+
+<div class="form-group">
+    <label for="content"><h3>Your word prompt is: </h3></label>
+    <textarea  width="250px" type="text" class="form-control" id="content" name="content" required></textarea>
+  </div>
+
+  <input type="submit" class="btn btn-primary">

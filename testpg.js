@@ -12,8 +12,8 @@ const axios = require('axios');
 
 const api = async () => {
     try {
-       const resp = await axios.get('https://api.api-ninjas.com/v1/randomword') 
-       console.log('taco', resp.data)
+       const word = await axios.get('https://api.api-ninjas.com/v1/randomword') 
+       console.log('taco', word.data)
     } catch (err) {
         console.warn(err)
     }

@@ -15,17 +15,15 @@
             <% if (user) { %>
                 <%- include('partials/navbar') %>
              <% } else { %>
-            
-                <li>
-                     <a href="/users/new">Sign Up</a>
-                </li>
-                <li>
-                    <a href="/users/login">Login</a>
-                </li>
-
-                <li>
-                    <a href="/users/logout">Logout</a>
-                </li>
+                <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/users/new">Sign up</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/users/login">Login </a>
+                    </li>
+                  </ul>
+                
             <% } %> 
         </ul>
     </nav>

@@ -6,7 +6,7 @@ My app is a word prompt for individuals who have experienced trauma to journal o
 
 ## Choice of API
 
-Random-words-API - https://random-words-api.vercel.app/word
+Random-words-API - https://api.api-ninjas.com/v1/randomword
 
 ## ERD
 ![Wireframe](./ERD.png)
