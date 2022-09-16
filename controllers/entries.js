@@ -31,7 +31,7 @@ router.get('/new', (req, res) => {
 
 // GET /entries/:entry_id - display a specific post and its user
 router.get('/:entry_id', (req, res) => {
-  db.entryId.findOne({
+  db.entry.findOne({
     where: { id: req.params.entry_id },
     include: [db.user, db.comment]
   })
@@ -42,7 +42,7 @@ router.get('/:entry_id', (req, res) => {
   })
   .catch((error) => {
     console.log(error)
-    res.send('server error')
+    res.send('Server Error')
   })
 })
 

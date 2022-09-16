@@ -42,8 +42,8 @@ app.use('/entries', require('./controllers/entries'))
 
 // route definitions
 app.get('/', (req, res) => {
-    db.entries.findAll({
-        include: [db.userId]
+    db.entry.findAll({
+        include: [db.user]
     }) .then((entries) => {
         res.render('home', { entries: entries })
     }) .catch ((error) => {
