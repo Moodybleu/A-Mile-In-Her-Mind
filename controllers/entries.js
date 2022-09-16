@@ -19,7 +19,7 @@ router.post('/new', (req, res) => {
 // GET /entries/new - display form for creating new entry
 router.get('/new', (req, res) => {
   // res.send('make your post here')
-  db.user.findAll()
+  db.entry.findAll()
   .then((entries) => {
     res.render('/entries/new', { entries: entries })
   // res.send(entries)
@@ -61,6 +61,7 @@ const newComment = await db.comment.create({
   entryId: req.params.id
 })
 console.log(newComment)
+
 // 3000/entries/1
 res.redirect(`/entries${req.params.id}`)
 } catch(err) {

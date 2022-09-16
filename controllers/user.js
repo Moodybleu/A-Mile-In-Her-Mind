@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
             }
         })
 
-        //  I f the user was found...send them to the login form
+        //  If the user was found...send them to the login form
         if (!created) {
             console.log('user already exists')
             res.redirect('/user/login?message=Please log into your account to continue.')

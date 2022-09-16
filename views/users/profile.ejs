@@ -1,15 +1,53 @@
-<img src="/profile_pic.jpeg" class="rounded float-start" alt="default profile picture">
-<h2>Welcome to your profile <%= user.email %>! </h2>
+<!-- default profile picture -->
+<img src="./images/profile_pic.jpeg"  alt="default profile picture">
 
-<form action="/entries" method="POST"> 
-    <div class="form-group">
-      <label for="title" placeholder="If you have a title, otherwise do not feel obligated."><h3>Title</h3></label>
-      <input type="text" class="form-control" id="title" name="title" required>
+<!-- This accordion displays past words and entries -->
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Accordion Item #1
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>Test</strong> Test
+        </div>
+      </div>
     </div>
-
-<div class="form-group">
-    <label for="content"><h3>Your word prompt is: </h3></label>
-    <textarea  width="250px" type="text" class="form-control" id="content" name="content" required></textarea>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Accordion Item #2
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <strong>Test</strong> Test
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Accordion Item #3
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <strong>Test</strong> Test
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- form for user to enter journal entries -->
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Title</label>
+    <input type="title" class="form-control" id="exampleFormControlInput1" placeholder="Optional...">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Your entry</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
 
   <input type="submit" class="btn btn-primary">
