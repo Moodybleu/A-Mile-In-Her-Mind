@@ -21,7 +21,7 @@ router.get('/new', (req, res) => {
   // res.send('make your post here')
   db.entry.findAll()
   .then((entries) => {
-    res.render('/entries/new', { entries: entries })
+    res.render('entry/new', { entries: entries })
   // res.send(entries)
    }) 
   .catch((error) => {
@@ -38,7 +38,7 @@ router.get('/:entry_id', (req, res) => {
   .then((entry) => {
     if (!entry) throw Error()
     console.log(entry.user)
-    res.render('entries/show', { entry: entry })
+    res.render('entry/show', { entry: entry })
   })
   .catch((error) => {
     console.log(error)
