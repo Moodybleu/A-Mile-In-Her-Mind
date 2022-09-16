@@ -2,6 +2,7 @@ let express = require('express')
 let db = require('../models')
 let router = express.Router()
 
+module.exports = router
 // POST /entries/new - view form for new post 
 router.post('/new', (req, res) => {
   db.entry.create ({
@@ -29,7 +30,7 @@ router.get('/new', (req, res) => {
   })
 })
 
-// GET /entries/:entry_id - display a specific post and its user
+// GET /entries/:entry_id - display a specific post 
 router.get('/:entry_id', (req, res) => {
   db.entry.findOne({
     where: { id: req.params.entry_id },
@@ -69,4 +70,3 @@ res.redirect(`/entries${req.params.id}`)
 }
 })
 
-module.exports = router

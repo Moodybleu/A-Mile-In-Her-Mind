@@ -56,13 +56,13 @@ app.get('/', (req, res) => {
     
 })
 
-// app.get('/entry/new', (req, res) => {
-//     axios.get(`https://api.api-ninjas.com/v1/randomword?s=${req.query.data}&apikey=${process.env.X_Api_Key}`)
-//       .then(response => {
-//         res.render('', { entries: response.data.word })
-//       })
-//       .catch(console.log)
-//   })
+app.get('/entry/new', (req, res) => {
+    axios.get(`https://api.api-ninjas.com/v1/randomword?s=${req.query.data}&apikey=${process.env.X_Api_Key}`)
+      .then(response => {
+        res.render('', { entries: response.data.word })
+      })
+      .catch(console.log)
+  })
 
 // listen on a port
 app.listen(PORT, () => {
