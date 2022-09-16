@@ -12,7 +12,7 @@ router.post('/new', (req, res) => {
     res.redirect('/')
   })
   .catch((error) => {
-    res.send('server error')
+    res.send('Home/404')
   })
 })
 // console.log('test')
@@ -25,13 +25,13 @@ router.get('/new', (req, res) => {
   // res.send(entries)
    }) 
   .catch((error) => {
-    res.send('server error')
+    res.send('Home/404')
   })
 })
 
 // GET /entries/:entry_id - display a specific post and its user
 router.get('/:entry_id', (req, res) => {
-  db.entry.findOne({
+  db.entryId.findOne({
     where: { id: req.params.entry_id },
     include: [db.user, db.comment]
   })

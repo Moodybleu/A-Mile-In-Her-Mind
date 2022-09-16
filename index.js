@@ -13,6 +13,7 @@ app.set('view engine', 'ejs')
 app.use(ejsLayouts)
 app.use(express.urlencoded({  extended: false }))
 app.use(cookieParser())
+
 // our custom auth middleware
 app.use(async (req, res, next) => {
     // console.log('hello from a middleware)
@@ -41,10 +42,25 @@ app.use('/entries', require('./controllers/entries'))
 
 // route definitions
 app.get('/', (req, res) => {
-    console.log('the currently logged in user is:', res.locals.user)
-    res.render('home')
+    db.entries.findAll({
+        include: [db.userId]
+    }) .then((entries) => {
+        res.render('home', { entries: entries })
+    }) .catch ((error) => {
+        console.log(error)
+        res.status(400).render('Home/404')
+    })
+    // console.log('the currently logged in user is:', res.locals.user)
+    
 })
 
+app.get('/entry/new', (req, res) => {
+    axios.get(`https://api.api-ninjas.com/v1/randomword?s=${req.query.word.data}&apikey=${process.env.X_Api_Key}`)
+      .then(response => {
+        res.render('results.ejs', { entries: response.data.word })
+      })
+      .catch(console.log)
+  })
 
 // listen on a port
 app.listen(PORT, () => {
