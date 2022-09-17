@@ -1,6 +1,6 @@
-let express = require('express')
-let db = require('../models')
-let router = express.Router()
+const express = require('express')
+const db = require('../models')
+const router = express.Router()
 
 module.exports = router
 // POST /entries/new - view form for new post 
@@ -26,12 +26,12 @@ router.get('/new', (req, res) => {
   // res.send(entries)
    }) 
   .catch((error) => {
-    res.send('Home/404')
+    res.send('Server error')
   })
 })
 
-// GET /entries/:entry_id - display a specific post 
-router.get('/:entry_id', (req, res) => {
+// GET /entries/:id - display a specific entry 
+router.get('/:id', (req, res) => {
   db.entry.findOne({
     where: { id: req.params.entry_id },
     include: [db.user, db.comment]
@@ -39,7 +39,7 @@ router.get('/:entry_id', (req, res) => {
   .then((entry) => {
     if (!entry) throw Error()
     console.log(entry.user)
-    res.render('entry/show', { entry: entry })
+    res.render('entries/show', { entry: entry })
   })
   .catch((error) => {
     console.log(error)
@@ -69,4 +69,12 @@ res.redirect(`/entries${req.params.id}`)
   console.log(err)
 }
 })
+router.get('/edit/:id', (req, res) => {
 
+})
+
+// DELETE /entries/:id -- 
+router.delete('/:id', (req,res) => {
+  const entryData = readEntryFile()
+  const word = wordData[req.params.id]
+})

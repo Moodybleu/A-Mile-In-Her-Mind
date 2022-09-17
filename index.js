@@ -5,12 +5,13 @@ const ejsLayouts = require('express-ejs-layouts')
 const db = require('./models')
 const cookieParser = require('cookie-parser')
 const crypto = require('crypto-js')
-// const controllers = require('./controllers')
 const axios = require('axios')
+// const controllers = require('./controllers')
 
 // config express app/middleware
 const app = express()
 const PORT = process.env.PORT || 3000
+
 app.set('view engine', 'ejs')
 app.use(ejsLayouts)
 app.use(express.urlencoded({  extended: false }))
@@ -56,13 +57,16 @@ app.get('/', (req, res) => {
     
 })
 
-app.get('/entry/new', (req, res) => {
-    axios.get(`https://api.api-ninjas.com/v1/randomword?s=${req.query.data}&apikey=${process.env.X_Api_Key}`)
-      .then(response => {
-        res.render('', { entries: response.data.word })
-      })
-      .catch(console.log)
-  })
+app.get('/', (req, res) => {
+    
+    let randomWordUrl = 'https://api.api-ninjas.com/v1/randomword';
+    axios.get(randomWordUrl).then(apiResponse => {
+        const randomWord = apiResponse.data.results; 
+        console.log(randomWord)
+        res.render('entry/new', {randomWord: randomWord.words});
+    })
+});
+   
 
 // listen on a port
 app.listen(PORT, () => {

@@ -13,7 +13,7 @@ const axios = require('axios');
 const api = async () => {
     try {
        const word = await axios.get('https://api.api-ninjas.com/v1/randomword') 
-       console.log('taco', word.data)
+       console.log('your random word is', word.data)
     } catch (err) {
         console.warn(err)
     }

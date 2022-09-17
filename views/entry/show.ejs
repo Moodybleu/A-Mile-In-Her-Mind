@@ -1,11 +1,10 @@
-
 <p><%= entry.content %></p>
 
 
 <%if(entry.comments && entry.comments.length) { %>
   <% entry.comments.forEach(comment => { %>
     <p><%=comment.content%></p>
-    <p><%=comment.userId%></p>
+    <p><%=comment.user%></p>
     <% })%>
 <% } %>
 
