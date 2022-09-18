@@ -4,6 +4,7 @@ const router = express.Router()
 const axios = require('axios')
 
 module.exports = router
+
 // GET /entries/new - displays the random word
 router.get('/new', (req, res) => {
   const randomWordUrl = 'https://api.api-ninjas.com/v1/randomword';
@@ -18,7 +19,7 @@ router.get('/new', (req, res) => {
 })
 
 // POST /entries/new - view form for new post 
-router.post('/new', (req, res) => {
+router.post('/new', isLoggedIn, (req, res) => {
   console.log(req.body)
   db.entry.create({
     title: req.body.title ? req.body.title : null,
@@ -38,13 +39,13 @@ router.post('/new', (req, res) => {
 // GET /entries/:id - display a specific entry 
 router.get('/:id', (req, res) => {
   db.entry.findOne({
-    where: { id: req.params.entry_id },
+    where: { id: req.body.entry_id },
     include: [db.user, db.comment]
   })
   .then((entry) => {
     if (!entry) throw Error()
     console.log(entry.user)
-    res.render('entries/show', { entry: entry })
+    res.render('entries/show')
   })
   .catch((error) => {
     console.log(error)
@@ -52,37 +53,26 @@ router.get('/:id', (req, res) => {
   })
 })
 
- // POST /entry/:entry_id/comments - route to save comment to db
+// GET /entries/:id/edit -- return a form for editing entries
+router.get('/:id/edit')
 
-router.post('/:id/comments', async (req, res) => {
-  //  Get the data from req.body
-  // create new comment from data
-  // console.log new comment
-  // rerender page so the user sees their comment
-res.send(req.body)
-try {
-const newComment = await db.comment.create({
-  content: req.body.content,
-  userId: req.body.id,
-  entryId: req.body.id
-})
-console.log(newComment)
-
-// 3000/entries/1
-res.redirect(`/entries${req.params.id}`)
-} catch(err) {
-  console.log(err)
-}
-})
-router.put('/edit/:id', (req, res) => {
-res.send()
+// PUT /entries/:id -- update a specific entry
+router.put('/:id', isLoggedIn, (req, res) => {
+  console.log(req.body)
+  db.entry.update({
+    title: req.body.title ? req.body.title : null,
+    content: req.body.content,
+    userId: req.body.userId
+  })
+  .then((post) => {
+    res.redirect('/')
+  })
+  .catch((error) => {
+    res.send('Home/404')
+  })
 })
 
-// DELETE /entries/:id -- 
-// router.delete('/:id', (req,res) => {
-//   const entryData = readEntryFile()
-//   const word = wordData[req.params.id]
-// })
-router.delete('/user', (req, res) => {
-  res.send('Got a DELETE request at /user')
+// DELETE /entries/:id -- Delete a specific entry
+router.delete('/:id', (req, res) => {
+  res.send('Got a DELETE request at /entries/:id')
 })
