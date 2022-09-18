@@ -6,6 +6,7 @@ const db = require('./models')
 const cookieParser = require('cookie-parser')
 const crypto = require('crypto-js')
 const axios = require('axios')
+const methodOverride = require("method-override")
 // const controllers = require('./controllers')
 
 // config express app/middleware
@@ -14,6 +15,7 @@ const PORT = process.env.PORT || 3000
 
 app.set('view engine', 'ejs')
 app.use(ejsLayouts)
+app.use(methodOverride('_method'));
 app.use(express.urlencoded({  extended: false }))
 app.use(cookieParser())
 

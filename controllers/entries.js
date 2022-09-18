@@ -4,6 +4,19 @@ const router = express.Router()
 const axios = require('axios')
 
 module.exports = router
+// GET /entries/new - displays the random word
+router.get('/new', (req, res) => {
+  const randomWordUrl = 'https://api.api-ninjas.com/v1/randomword';
+  axios.get(randomWordUrl).then(apiResponse => {
+      const randomWord = apiResponse.data.word; 
+      console.log(randomWord)
+      res.render('entry/new', {randomWord});
+  })
+  .catch((error) => {
+    res.send('Server error: ' + error)
+  })
+})
+
 // POST /entries/new - view form for new post 
 router.post('/new', (req, res) => {
   console.log(req.body)
@@ -20,18 +33,7 @@ router.post('/new', (req, res) => {
   })
 })
 // console.log('test')
-// GET /entries/new - display form for creating new entry
-router.get('/new', (req, res) => {
-  const randomWordUrl = 'https://api.api-ninjas.com/v1/randomword';
-  axios.get(randomWordUrl).then(apiResponse => {
-      const randomWord = apiResponse.data.word; 
-      console.log(randomWord)
-      res.render('entry/new', {randomWord});
-  })
-  .catch((error) => {
-    res.send('Server error: ' + error)
-  })
-})
+
 
 // GET /entries/:id - display a specific entry 
 router.get('/:id', (req, res) => {
@@ -61,8 +63,8 @@ res.send(req.body)
 try {
 const newComment = await db.comment.create({
   content: req.body.content,
-  userId: req.params.id,
-  entryId: req.params.id
+  userId: req.body.id,
+  entryId: req.body.id
 })
 console.log(newComment)
 
@@ -72,12 +74,15 @@ res.redirect(`/entries${req.params.id}`)
   console.log(err)
 }
 })
-router.get('/edit/:id', (req, res) => {
-
+router.put('/edit/:id', (req, res) => {
+res.send()
 })
 
 // DELETE /entries/:id -- 
-router.delete('/:id', (req,res) => {
-  const entryData = readEntryFile()
-  const word = wordData[req.params.id]
+// router.delete('/:id', (req,res) => {
+//   const entryData = readEntryFile()
+//   const word = wordData[req.params.id]
+// })
+router.delete('/user', (req, res) => {
+  res.send('Got a DELETE request at /user')
 })

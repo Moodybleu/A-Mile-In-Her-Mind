@@ -1,16 +1,16 @@
 <h2 class="text-center">Welcome to your personal trauma journal.</h2>
-<h4>Here you have space to speak your truth, and space to heal. With this journal I hope you find peace of mind, and the strength to move forward through whatever plagues you. In this space you are free from judgement, rejection, and fear. I encourage you to enter this space, and leave behind the day to day world so that you may enter your own. Let your writing and emotions flow here.</h4>
+<h4 class="text-center">Here you have space to speak your truth, and space to heal. With this journal I hope you find peace of mind, and the strength to move forward through whatever plagues you. In this space you are free from judgement, rejection, and fear. I encourage you to enter this space, and leave behind the day to day world so that you may enter your own. Let your writing and emotions flow here.</h4>
 
 <div class="accordion" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-
+          <h3><%= entries.title %></h3>
         </button>
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <strong>This will be a users entry</strong>
+          <p><%=entries.content%></p>
         </div>
       </div>
     </div>
@@ -19,7 +19,7 @@
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingTwo">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Accordion Item #2
+          <h3><%= entries.title %></h3>
         </button>
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -32,7 +32,7 @@
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingThree">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Accordion Item #3
+          <h3><%= entries.title %></h3>
         </button>
       </h2>
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
