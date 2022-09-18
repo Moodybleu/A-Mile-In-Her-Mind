@@ -35,11 +35,13 @@ Random-words-API - https://api.api-ninjas.com/v1/randomword
 ## MVP 
  - user is able to log in 
  - user is able to write an entry
- - user is able favorite other user entries
  - user is able to see a word for their prompt
+ - user can see their past entries on their profile
  
 
 ## stretch goals
 - calm music in the background of entry page
 - Anxiety attack button -- for users who have panic attacks mid-entry. The button will connect them to a serene scene and play a meditation that reminds them they are safe now
 - access past entries by clicking prompted word in the list of your past prompts
+- user can like other users entries
+- users can optionally share entries
