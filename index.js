@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
     db.entry.findAll({
         include: [db.user]
     }) .then((entries) => {
-        res.render('home', { entries: entries })
+        res.render('home', { entries })
     }) .catch ((error) => {
         console.log(error)
         res.status(400).render('Home/404')
@@ -56,17 +56,6 @@ app.get('/', (req, res) => {
     // console.log('the currently logged in user is:', res.locals.user)
     
 })
-
-app.get('/', (req, res) => {
-    
-    let randomWordUrl = 'https://api.api-ninjas.com/v1/randomword';
-    axios.get(randomWordUrl).then(apiResponse => {
-        const randomWord = apiResponse.data.results; 
-        console.log(randomWord)
-        res.render('entry/new', {randomWord: randomWord.words});
-    })
-});
-   
 
 // listen on a port
 app.listen(PORT, () => {

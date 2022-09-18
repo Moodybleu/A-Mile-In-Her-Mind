@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   entry.init({
     userId: DataTypes.INTEGER,
+    title: DataTypes.STRING,
     content: DataTypes.TEXT,
     is_private: DataTypes.BOOLEAN,
     words: DataTypes.TEXT

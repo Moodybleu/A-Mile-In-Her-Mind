@@ -1,11 +1,14 @@
 const express = require('express')
 const db = require('../models')
 const router = express.Router()
+const axios = require('axios')
 
 module.exports = router
 // POST /entries/new - view form for new post 
 router.post('/new', (req, res) => {
-  db.entry.create ({
+  console.log(req.body)
+  db.entry.create({
+    title: req.body.title ? req.body.title : null,
     content: req.body.content,
     userId: req.body.userId
   })
@@ -19,14 +22,14 @@ router.post('/new', (req, res) => {
 // console.log('test')
 // GET /entries/new - display form for creating new entry
 router.get('/new', (req, res) => {
-  // res.send('make your post here')
-  db.entry.findAll()
-  .then((entries) => {
-    res.render('entry/new', { entries: entries })
-  // res.send(entries)
-   }) 
+  const randomWordUrl = 'https://api.api-ninjas.com/v1/randomword';
+  axios.get(randomWordUrl).then(apiResponse => {
+      const randomWord = apiResponse.data.word; 
+      console.log(randomWord)
+      res.render('entry/new', {randomWord});
+  })
   .catch((error) => {
-    res.send('Server error')
+    res.send('Server error: ' + error)
   })
 })
 

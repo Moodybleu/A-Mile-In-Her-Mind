@@ -36,7 +36,7 @@ Random-words-API - https://api.api-ninjas.com/v1/randomword
  - user is able to log in 
  - user is able to write an entry
  - user is able favorite other user entries
- - user is able to see 1 - 3 words for their prompt
+ - user is able to see a word for their prompt
  
 
 ## stretch goals
