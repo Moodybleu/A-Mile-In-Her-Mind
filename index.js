@@ -7,7 +7,6 @@ const cookieParser = require('cookie-parser')
 const crypto = require('crypto-js')
 const axios = require('axios')
 const methodOverride = require("method-override")
-const isLoggedIn = require('./middleware/isLoggedIn');
 
 // const controllers = require('./controllers')
 
