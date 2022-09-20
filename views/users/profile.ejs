@@ -1,26 +1,43 @@
 
-
 <!-- This accordion displays past words and entries -->
-
-<%entries.forEach(function(entry) { %>
-  <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          <h3><%= entry.title %></h3>
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <p><%=entry.content%></p>
-        </div>
+<img class="align-center" src="https://i.ibb.co/s6px4g4/profile-pic.jpg" alt="profile-pic" border="0"></a> <h1>Hello,<%=user.email%></h1>
+<div class="main">
+  <h2>About me</h2>
+  <div class="card">
+      <div class="card-body">
+          <i class="fa fa-pen fa-xs edit"></i>
+          <table>
+              <tbody>
+                  <tr>
+                      <td>Name</td>
+                      <td>:</td>
+                      <td>Megan</td>
+                  </tr>
+                  <tr>
+                      <td>Email</td>
+                      <td>:</td>
+                      <td>meganbenn27@icloud.com</td>
+                  </tr>
+                  <tr>
+                      <td>location</td>
+                      <td>:</td>
+                      <td>Lompoc, California</td>
+                  </tr>
+                  <tr>
+                      <td>Hobbies</td>
+                      <td>:</td>
+                      <td>Playing video games, Reading, Throwing the ball for my dog</td>
+                  </tr>
+                  <tr>
+                      <td>Job</td>
+                      <td>:</td>
+                      <td>Software Engineer</td>
+                  </tr>
+              </tbody>
+          </table>
       </div>
-    </div>
-    <a href="/entries/edit/<%= entry.id %>"> Edit </a>
-    <form method="POST" action="/entries/delete<%= entry.id %>/?_method=DELETE">
-      <input type="submit" value="Delete">
-    </form>
-    <% }) %>
-   
+  </div>
+
+
 
  

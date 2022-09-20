@@ -10,7 +10,7 @@ router.get('/new', (req, res) => {
   const randomWordUrl = 'https://api.api-ninjas.com/v1/randomword';
   axios.get(randomWordUrl).then(apiResponse => {
       const randomWord = apiResponse.data.word; 
-      console.log(randomWord)
+      // console.log(randomWord)
       res.render('entry/new', {randomWord});
   })
   .catch((error) => {
@@ -33,8 +33,6 @@ router.post('/new', (req, res) => {
     res.send('Home/404')
   })
 })
-// console.log('test')
-
 
 // GET /entries/:id -- display a specific entry 
 router.get('/:id', (req, res) => {
@@ -93,10 +91,10 @@ router.put('/:id', (req, res) => {
 // DELETE /entries/:id -- Delete a specific entry
 router.delete('/:id', async (req, res) => {
     try {
-      console.log(id)
+      console.log(entry_id)
       const entryToDelete = await db.entry.destroy({
         where: {
-          id: req.params.id
+          id: req.params.entry_id
         }
       }) 
       res.redirect('/')
