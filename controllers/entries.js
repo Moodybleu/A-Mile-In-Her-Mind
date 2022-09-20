@@ -55,14 +55,14 @@ router.get('/:id', (req, res) => {
 
 // GET /entries/edit/:id -- return a form for editing entries
 router.get('/edit/:id', (req, res) => {
-  db.entry.findOne({
-    where: { id: req.body.entry_id },
-    include: [db.user, db.comment]
+  const entry = db.entry.findOne({
+    where: { id: req.params.id },
+    include: [db.user]
   })
   .then((entry) => {
     if (!entry) throw Error()
     console.log(entry.user)
-    res.render('entry/show')
+    res.render('entry/edit', {entry: entry})
   })
   .catch((error) => {
     console.log(error)
@@ -71,13 +71,19 @@ router.get('/edit/:id', (req, res) => {
 })
 
 // PUT /entries/edit/:id -- update a specific entry
-router.put('/edit/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   // console.log(req.body)
   db.entry.update({
-    title: req.body.title ? req.body.title : null,
+    title: req.body.title,
     content: req.body.content,
-    userId: req.body.userId
-  })
+    userId: req.body.id
+  }, {
+    where: {
+      id: req.params.id
+    }
+  }
+
+  )
   .then((post) => {
     res.redirect('/')
   })
@@ -94,6 +100,7 @@ router.delete('/:id', async (req, res) => {
           id: req.params.id
         }
       }) 
+      res.redirect('/')
     } catch(err) {
       console.log(err)
     }

@@ -30,13 +30,12 @@ Random-words-API - https://api.api-ninjas.com/v1/randomword
 
 - as a user I want to be able to login to my own profile
 - As a user want to be able to write an entry with a prompted word
-- as a user i want to be able to favorite posts I appreciate or liked
 
 ## MVP 
  - user is able to log in 
  - user is able to write an entry
  - user is able to see a word for their prompt
- - user can see their past entries on their profile
+ - user can see their past entries on their homepage
  
 
 ## stretch goals

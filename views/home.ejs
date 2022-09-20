@@ -15,10 +15,10 @@
         </div>
       </div>
     </div>
-    <!-- <a href="/entries/edit/<%= //entry.id %>"> Edit </a> -->
-    <form method="POST" action="/entries/edit/<%= entry.id %>/?_method=PUT">
-      <input type="submit" value="Edit">
-    <form method="POST" action="/entries/delete/<%= entry.id %>/?_method=DELETE">
+    <a href="/entries/edit/<%= entry.id %>"> Edit </a>
+    <!-- <form method="POST" action="/entries/edit/<%= entry.id %>/?_method=PUT">
+      <input type="submit" value="Edit"> -->
+    <form method="POST" action="/entries/<%= entry.id %>/?_method=DELETE">
       <input type="submit" value="Delete">
     <% }) %>
           <!-- use a forEach on entries -->
