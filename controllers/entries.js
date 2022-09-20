@@ -81,9 +81,7 @@ router.put('/:id', (req, res) => {
     where: {
       id: req.params.id
     }
-  }
-
-  )
+  })
   .then((post) => {
     res.redirect('/')
   })
@@ -95,6 +93,7 @@ router.put('/:id', (req, res) => {
 // DELETE /entries/:id -- Delete a specific entry
 router.delete('/:id', async (req, res) => {
     try {
+      console.log(id)
       const entryToDelete = await db.entry.destroy({
         where: {
           id: req.params.id
@@ -105,4 +104,3 @@ router.delete('/:id', async (req, res) => {
       console.log(err)
     }
 })
-

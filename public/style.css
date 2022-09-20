@@ -1,7 +1,7 @@
-body {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(to top, #4c3079, #4a3a83, #48458d, #464e96, #43589e, #4064a9, #3e6fb4, #3b7bbe, #388ccc, #369cd9, #38ade5, #3ebef0) !important;
+* {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-image: url(/images/watercolor_bg.png) !important;
        
 }
 
