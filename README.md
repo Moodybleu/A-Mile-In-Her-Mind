@@ -57,9 +57,9 @@ The tech I used to build my app was node.js, express.js, third-party API, RESTfu
 - users can optionally share entries
 
 ## Post-Project reflection
-This project proved very difficult for me. I had an exceptionally hard time understanding routes and how to get them functioning. I feel I would have had more fun with my project if it was a project for pleasure instead of for school. Obviously this would remove any time crunch I had for this project and allow me to just create. I do have a handful of bugs i'm still going to try to fix in the future. The delete function still deletes the first entry every time and I can't get the background image to cover all my pages. Given more time i think i would have been able to successfully implement all of the functionality I wanted for my app. But i did learn along the way that my time-management skills need work, and I need to rein in my expectations for any future projects. I've caught myself already expecting perfection from my coding abilities and that's just not feasible. this project definitely taught me a lot about myself and about coding. 
+- This project proved very difficult for me. I had an exceptionally hard time understanding routes and how to get them functioning. I feel I would have had more fun with my project if it was a project for pleasure instead of for school. Obviously this would remove any time crunch I had for this project and allow me to just create. I do have a handful of bugs i'm still going to try to fix in the future. The delete function still deletes the first entry every time and I can't get the background image to cover all my pages. Given more time i think i would have been able to successfully implement all of the functionality I wanted for my app. But i did learn along the way that my time-management skills need work, and I need to rein in my expectations for any future projects. I've caught myself already expecting perfection from my coding abilities and that's just not feasible. this project definitely taught me a lot about myself and about coding. 
 
 ## sources
-Blog-pulse code along 
-dino-CRUD code along
-Express project-organizer code along
+- Blog-pulse code along 
+- dino-CRUD code along
+- Express project-organizer code along
