@@ -5,7 +5,7 @@ const axios = require('axios')
 
 module.exports = router
 
-// GET /entries/new -- displays the random word
+// GET /entries/new -- displays the random word and the new entry form
 router.get('/new', (req, res) => {
   const randomWordUrl = 'https://api.api-ninjas.com/v1/randomword';
   axios.get(randomWordUrl).then(apiResponse => {
@@ -31,23 +31,6 @@ router.post('/new', (req, res) => {
   })
   .catch((error) => {
     res.send('Home/404')
-  })
-})
-
-// GET /entries/:id -- display a specific entry 
-router.get('/:id', (req, res) => {
-  db.entry.findOne({
-    where: { id: req.body.entry_id },
-    include: [db.user, db.comment]
-  })
-  .then((entry) => {
-    if (!entry) throw Error()
-    console.log(entry.user)
-    res.render('entry/show')
-  })
-  .catch((error) => {
-    console.log(error)
-    res.send('Server Error')
   })
 })
 
@@ -91,10 +74,10 @@ router.put('/:id', (req, res) => {
 // DELETE /entries/:id -- Delete a specific entry
 router.delete('/:id', async (req, res) => {
     try {
-      console.log(entry_id)
+      console.log(req.params.id)
       const entryToDelete = await db.entry.destroy({
         where: {
-          id: req.params.entry_id
+          id: req.params.id
         }
       }) 
       res.redirect('/')
