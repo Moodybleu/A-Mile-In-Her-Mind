@@ -5,7 +5,26 @@
 My app is a word prompt for individuals who have experienced trauma to journal or write about their feelings on their trauma. The application will prompt the user a word for them to integrate into a journal entry or poem. They will then be able to write an entry in the application for themselves and in the future, to share. 
 
 ## Installation instructions
+To run A Mile In Her Mind on your local machine, first fork and clone this repository. Then follow these steps: 
+1. In your terminal, navigate to the cloned repository. Run the command 
+```
+npm -install 
+```
+to install all of the packages needed to run the app. 
 
+2. You will need to add a few files for functionality. In your terminal in the same location as above, run the following command: 
+``` 
+touch .gitignore .env 
+```
+
+3. In the .gitignore file, add node_modules and .env 
+
+4. In the .env file, you need to add 3 variables. First, an ENC_KEY, which can be a random string. For example, you would write: 
+```
+ENC_KEY=fjkas;dfjka;djafdlskfjae;haaekfksjf;aldjfk
+```
+5. In the .env file, you will need to add an access code to run the Random Word API. API Keys can be obtained by making an account with API ninja found at this address [Random Word API](https://api-ninjas.com/api/randomword).  Once you complete this, you will be given an API_KEY. Add it to the .env file as: It should look like X-Api-Key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx - API Key associated with your account.
+```
 ## Deployment link
 A Mile In Her Mind - https://a-mile-in-her-mind-moodybleu.koyeb.app/
 
