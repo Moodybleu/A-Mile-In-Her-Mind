@@ -26,17 +26,17 @@ ENC_KEY=fjkas;dfjka;djafdlskfjae;haaekfksjf;aldjfk
 5. In the .env file, you will need to add an access code to run the Random Word API. API Keys can be obtained by making an account with API ninja found at this address [Random Word API](https://api-ninjas.com/api/randomword).  Once you complete this, you will be given an API_KEY. Add it to the .env file as: It should look like X-Api-Key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx - API Key associated with your account.
 ```
 ## Deployment link
-A Mile In Her Mind - https://a-mile-in-her-mind-moodybleu.koyeb.app/
+- A Mile In Her Mind - https://a-mile-in-her-mind-moodybleu.koyeb.app/
 
 ## Choice of API
 
-Random-words-API - https://api.api-ninjas.com/v1/randomword
+- Random-words-API - https://api.api-ninjas.com/v1/randomword
 
 ## Approach taken
-I started with the set up of my NPM packages and making my models. Once i had those completed i started to set up my RESTful routes, these took me some time to figure out so i moved onto filling in the pages and came back to my routes toward the end of the project.
+- I started with the set up of my NPM packages and making my models. Once i had those completed i started to set up my RESTful routes, these took me some time to figure out so i moved onto filling in the pages and came back to my routes toward the end of the project.
 
 ## Tech used
-The tech I used to build my app was node.js, express.js, third-party API, RESTful routes, axios, a database, routers, and method Override.
+- The tech I used to build my app was node.js, express.js, third-party API, RESTful routes, axios, a database, routers, and method Override.
 
 ## ERD
 ![Wireframe](./ERD.png)
