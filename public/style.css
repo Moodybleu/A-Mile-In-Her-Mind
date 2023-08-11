@@ -1,6 +1,17 @@
-* {
+body {
     background-repeat: no-repeat !important;
     /* background-size: cover !important; */
     background-image: url(/images/watercolor_bg.png) !important;
 }
 
+.nav-item{
+border: 1px black solid; 
+
+}
+#Profile-pic{
+    align-items: center !important;
+}
+
+.form-group{
+    
+}

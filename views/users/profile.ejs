@@ -1,6 +1,6 @@
 
 <!-- This accordion displays past words and entries -->
-<img class="align-center" src="https://i.ibb.co/s6px4g4/profile-pic.jpg" alt="profile-pic" border="0"></a> <h1>Hello,<%=user.email%></h1>
+<img id="Profile-pic" class="align-center" src="https://i.ibb.co/s6px4g4/profile-pic.jpg" alt="profile-pic" border="0"></a> <h1>Hello,<%=user.email%></h1>
 <div class="main">
   <h2>About me</h2>
   <div class="card">
@@ -11,12 +11,12 @@
                   <tr>
                       <td>Name</td>
                       <td>:</td>
-                      <td>Megan</td>
+                      <td><%=user.name%></td>
                   </tr>
                   <tr>
                       <td>Email</td>
                       <td>:</td>
-                      <td>meganbenn27@icloud.com</td>
+                      <td><%=user.email%></td>
                   </tr>
                   <tr>
                       <td>location</td>
