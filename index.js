@@ -53,7 +53,7 @@ app.get('/', (req, res) => {
         include: [db.user]
     }) .then((entries) => {
         res.render('home', { entries })
-    }) .catch ((error) => {
+    }) .catch((error) => {
         console.log(error)
         res.status(400).render('Home/404')
     })

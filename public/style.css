@@ -1,6 +1,6 @@
 * {
     background-repeat: no-repeat !important;
-    background-size: cover !important;
+    /* background-size: cover !important; */
     background-image: url(/images/watercolor_bg.png) !important;
 }
 
