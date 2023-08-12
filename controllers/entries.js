@@ -8,10 +8,11 @@ module.exports = router
 // GET /entries/new -- displays the random word and the new entry form
 router.get('/new', (req, res) => {
   const randomWordUrl = 'https://api.api-ninjas.com/v1/randomword';
+  console.log(randomWordUrl)
   axios.get(randomWordUrl).then(apiResponse => {
       const randomWord = apiResponse.data.word; 
       // console.log(randomWord)
-      res.render('entry/new', {randomWord});
+      res.render('/entry/new', {randomWord});
   })
   .catch((error) => {
     res.send('Server error: ' + error)
@@ -20,7 +21,7 @@ router.get('/new', (req, res) => {
 
 // POST /entries/new -- view form for new post 
 router.post('/new', (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   db.entry.create({
     title: req.body.title ? req.body.title : null,
     content: req.body.content,
